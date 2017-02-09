@@ -3,6 +3,20 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+	$(".click-listener").click(function(event) {
+
+		// Prevent scrolling from the top
+		event.preventDefault();
+
+		// Grab name
+		var name = $(this).first().text();
+		// Get anagrammed name
+		var newName = anagrammedName(name);
+		// Set new name
+		$(this).first().text(newName);
+
+	});
 })
 
 /*
